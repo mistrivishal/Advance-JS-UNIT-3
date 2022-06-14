@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+*{
+    /* font-family: 'Poppins', sans-serif;
+    font-family: 'PT Sans', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+
+#cart{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+#cart img{
+    width: 100px;
+}
+body>a{
+    margin-top: 100px;
+    text-align: center;
+    margin-left: 10%;
+}
+#checkout{
+    width: 10%;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+}

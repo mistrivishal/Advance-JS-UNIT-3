@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/styles/index.css">
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="login.html">Login</a></div>
+            <div><a href="signup.html">Signup</a></div>
+        </div>
+        <div id="slideshow">
+            <!--Show Slideshow here-->
+
+        </div>
+
+        <div id="sort-buttons">
+
+            <!--Add sorting here-->
+        </div>
+        <div id="movies">
+            <!--Show list of movies here-->
+        </div>
+    </body>
+
+</html>
+<script>
+    let img_arr =[
+        "https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/pawankhind-et00307433-17-01-2022-05-27-05.jpg",
+        "https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/fantastic-beasts-the-secrets-of-dumbledore-et00319643-06-04-2022-02-24-42.jpg",
+        "https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/rrr-et00094579-29-03-2022-03-23-44.jpg",
+        "https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/kgf-chapter-2-et00098647-08-04-2022-11-33-32.jpg",
+        "https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/doctor-strange-in-the-multiverse-of-madness-et00310791-07-04-2022-05-54-25.jpg",
+    ]
+    console.log(img_arr[0])
+    let slides = document.querySelector("#slideshow")
+    let img = document.createElement("img");
+    img.src = img_arr[0]
+    slides.append(img)
+    let i = 0;
+
+    setInterval(function(){
+        if(i === img_arr.length){
+            i = 0;
+        }
+        slides.innerHTML = null
+        img.src = img_arr[i];
+        // console.log(i)
+        slides.append(img);
+        i++;          
+    },2000) 
+
+    // 9 movies data collection and set to LocalStorage
+
+    let moviesdata = []
+
+    function movieobj(n,rd,img,r){
+        this.name = n;
+        this.releaseDate = rd;
+        this.poster = img;
+        this.IMDb_Rating = r;
+    }
+    let Endgame = new movieobj("Avengers: Endgame",
+                                "26 Apr, 2019",
+                                "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/avengers-end-game-et00090482-07-12-2018-06-50-21.jpg",
+                                "8.4"
+    )
+    let Idiots = new movieobj("3 Idiots",
+                                "25 Dec, 2009",
+                                "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/3-idiots-et00001611-24-03-2017-16-06-37.jpg",
+                                "8.5"
+    )
+    let Gulabjaam = new movieobj("Gulabjaam",
+                                "16 Feb, 2018",
+                                "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/gulabjaam-et00069281-16-01-2018-01-20-23.jpg",
+                                "8.2"
+    )
+    let TheDarkKnight = new movieobj("The Dark Knight",
+                                "18 Jul, 2008",
+                                "https://assets-in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/the-dark-knight-et00001549-17-03-2021-06-39-49.jpg",
+                                "9.1"
+    )
+    let Inception = new movieobj("Inception",
+                                "16 Jul, 2010",
+                                "https://assets-in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/inception-et00004883-03-02-2021-07-04-48.jpg",
+                                "8.8"
+    )
+    let Shawshank = new movieobj("The Shawshank Redemption",
+                                "14 Oct, 1994",
+                                "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
+                                "9.3"
+    )
+    let Wasseypur = new movieobj("Gangs of Wasseypur",
+                                "22 Jun, 2012",
+                                "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/gangs-of-wasseypur-et00007656-09-11-2020-10-44-20.jpg",
+                                "8.2"
+    )
+    let Swades = new movieobj("Swades",
+                              "17 Dec, 2004",
+                              "https://m.media-amazon.com/images/M/MV5BYzExOTcwNjYtZTljMC00YTQ2LWI2YjYtNWFlYzQ0YTJhNzJmXkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_.jpg",
+                              "8.1"
+    )
+    let HeraPheri = new movieobj("Hera Pheri",
+                                "31 Mar, 2000",
+                                "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/hera-pheri-et00001678-17-07-2017-01-23-44.jpg",
+                                "8.1"
+    )
+    
+    moviesdata.push(Endgame,Idiots,Gulabjaam,TheDarkKnight,Inception,Shawshank,Wasseypur,Swades,HeraPheri)
+    
+    localStorage.setItem("movies",JSON.stringify(moviesdata))
+
+    let showMovies = document.querySelector("#movies");
+
+    let data = JSON.parse(localStorage.getItem("movies"))
+
+    window.addEventListener("load", function () {
+        ShowData(data);
+    });
+
+    function ShowData(data){
+        document.querySelector("#movies").innerHTML = null;
+        data.map(function (elem){
+            let box = document.createElement("div");
+
+            let name = document.createElement("h2");
+            name.innerText = elem.name;
+
+            let date = document.createElement("p");
+            date.innerText = `Release Date: ${elem.releaseDate}`;
+
+            let img = document.createElement("img");
+            img.src = elem.poster;
+
+            let rating = document.createElement("p");
+            rating.innerText = `IMDb Ratings: ⭐ ${elem.IMDb_Rating}/10`;
+
+            box.append(img,name,date,rating)
+
+            showMovies.append(box)
+        })
+    }
+
+    let sort = document.querySelector("#sort-buttons")
+
+    let btn1 = document.createElement("button")
+    btn1.innerText = "Low to High"
+    btn1.addEventListener("click",function(){
+        data.sort(function (a, b) {
+        return a.IMDb_Rating - b.IMDb_Rating;
+        });
+        ShowData(data);
+    })
+    let btn2 = document.createElement("button")
+    btn2.innerText = "High to Low"
+    btn2.addEventListener("click",function(){
+        data.sort(function (a, b) {
+        return b.IMDb_Rating - a.IMDb_Rating;
+        });
+        ShowData(data);
+    })
+
+    let p = document.createElement("p")
+    p.innerText = "Sort by Rating : "
+
+    sort.append(p,btn1,btn2)
+
+</script>

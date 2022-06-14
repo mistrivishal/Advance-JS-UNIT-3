@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #input{
+            width: 300px;
+            padding: 6px 10px;
+        }
+        #dabba{
+            width: 324px;
+            height: 300px;
+            border: 1px solid red;
+            border-top: none;
+            overflow: scroll;
+            padding: 10px 10px;
+            box-sizing: border-box;
+            display: grid;
+            gap: 10px;
+        }
+        #dabba>div{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 10px;
+        }
+        #dabba>div>img{
+            width: 40px;
+            height: 50px;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Netflix</h1>
+    <input type="text" name="" id="input" oninput="debouncing(main,1000)" />
+    <div id="dabba">
+        <div id="dabba1">
+
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+let movie = document.getElementById('dabba')
+
+let id;
+async function searchMovie(){
+    try{
+        const input = document.getElementById('input').value;
+        const res =await fetch(`https://omdbapi.com/?&apikey=c2daac06&s=${input}`);
+        const data = await res.json();
+        // console.log(data)
+        const movies = data.Search
+        return movies
+    }
+    catch(err){
+        console.log('err',err)
+    }
+}
+function appendMovies(data){
+    movie.innerHTML = null;
+    data.forEach(element => {
+        let p = document.createElement('p');
+        p.innerText = element.Title
+        let img = document.createElement('img')
+        img.src = element.Poster
+        let dabba1 = document.createElement('div');
+        dabba1.append(img,p)
+        movie.append(dabba1)
+    });
+}
+
+// 1. we will assemble them in one function
+
+async function main(){
+    let data = await searchMovie();
+    if(data === undefined){
+        return false;
+    }
+    appendMovies(data);
+}
+
+//2. Debouncing
+function debouncing(func,delay){
+    if(id){
+        clearTimeout(id)
+    }
+    id = setTimeout(function(){
+        func()
+    },delay)
+}
+
+let x = 5;
+
+const nu = (x) => {
+    for(let i=1;i<=x;i++)
+    setTimeout(()=>{
+        console.log(i)
+    },1000)
+}
+nu(5)
+</script>

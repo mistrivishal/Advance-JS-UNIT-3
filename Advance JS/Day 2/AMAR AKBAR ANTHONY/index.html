@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMAR AKBAR ANTHONY</title>
+</head>
+<body>
+    <h1 id="h1">
+
+    </h1>
+</body>
+</html>
+<script>
+    var h1 = document.querySelector("#h1")
+
+    let amar = {
+        name:"Amar",
+        Skill:"singer",
+        city:"Goa",
+
+        shareSkils: function (skills){
+            console.log(`${this.name} is a ${skills}, lives in ${this.city}.`)
+            h1.append(`${this.name} is a ${skills}, lives in ${this.city}.`)
+        }
+    }
+    let akbar = {
+        name:"Akbar",
+        Skill:"chef",
+        city:"Mumbai",
+    }
+    let anthony = {
+        name:"Anthony",
+        Skill:"Magician",
+        city:"Kashmir",
+    }
+
+    //here pass the skill as an argument
+
+    amar.shareSkils.call(anthony,"chef")
+
+
+    
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-COMMERCE I</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        h1{
+            margin: auto;
+            text-align: center;
+            font-weight: 800;
+            width: 35%;
+            background-color: rgb(216, 250, 250);
+            line-height: 60px;
+            margin-bottom: 20px;
+        }
+        #form{
+            display: grid;
+            gap:30px;
+            width: 35%;
+            margin: auto;
+        }
+        input,select{
+            padding: 8px;
+            font-size: 20px;
+            /* background-color: goldenrod; */
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter product details Below</h1>
+    <form id="form" action="" onsubmit="storeproducts(event)">
+        <input placeholder="Enter Product Name" id="name" type="text" />
+        <input placeholder="Enter Product Category" id="category" type="text" />
+        <input placeholder="Enter Product Image UrL" id="img" type="text" />
+        <input placeholder="Enter Product Price" id="price" type="text" />
+        <select id="gender">
+            <option value="Select">Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <select id="sold">
+            <option value="false">Sell</option>
+            <option value="true">Sold</option>
+        </select>
+        <!-- <input placeholder="Enter Product Status" id="sold" type="text" /> -->
+        <input id="add" type="submit" name="submit" value="Submit" />
+    </form>
+</body>
+</html>
+<script src="admin.js"></script>

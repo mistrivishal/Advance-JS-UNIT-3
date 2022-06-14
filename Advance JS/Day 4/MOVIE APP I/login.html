@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/styles/login.css">
+        <link rel="stylesheet" href="/styles/index.css">
+
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="login.html">Login</a></div>
+            <div><a href="signup.html">Signup</a></div>
+        </div>
+
+        <div id="login-form-div">
+
+            <form onsubmit="login(event)">
+                <!--Write form input elements here-->
+                <h1>Login</h1>
+                    <!--Write form input elements here-->
+                    <input id="email" type="email" placeholder="Enter your email"/>
+                    <input id="pass" type="password" placeholder="Enter your password" minlength="8" maxlength="16"/>
+                    <input id="submit" type="submit" value="Submit">
+            </form>
+
+        </div>
+    </body>
+
+</html>
+<script>
+    let verify = JSON.parse(localStorage.getItem("credentials"))
+
+    // console.log(verify)
+    function login(event){
+        
+        event.preventDefault();
+
+        // console.log("inside")
+
+        let form = document.querySelector("form")
+
+        let enteredEmail = form.email.value;
+        let enteredPass = form.pass.value;
+
+        // console.log(enteredEmail)
+
+        for (let i = 0; i < verify.length; i++) {
+            console.log(verify[i]);
+            if (verify[i].email == enteredEmail && verify[i].password == enteredPass) {
+
+                alert("login successful");
+                window.location.href = "index.html";
+                break;
+            } else {
+                alert("invalid Credentials");
+                break;
+            }
+        }
+    }
+</script>

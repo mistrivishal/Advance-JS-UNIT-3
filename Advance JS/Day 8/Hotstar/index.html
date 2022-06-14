@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal's Disney+ Hotstar</title>
+    <link rel="icon" href="https://secure-media.hotstar.com/web-assets/prod/D+H_favicon.ico" type="image/icon type">
+    <link rel="stylesheet" href="hotstar.css">
+    <script src="https://kit.fontawesome.com/11e71d58fc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="navbar">
+        <div id="left">
+            <div id="lines">
+                <i class="fa-solid fa-bars"></i>
+                <div id="left-menu">
+                    <!-- <a href="">Channels</a>
+                    <a href="">Language</a>
+                    <a href="">Genres</a> -->
+                </div>
+            </div>
+            <div id="logo">
+                <img src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg" alt="">
+            </div>
+            <div>TV</div>
+            <div>Movies</div>
+            <div>Sports</div>
+            <div>Diseny+</div>
+            <div    >
+                <img src="https://www.hotstar.com/assets/4aa70ede8904e16b7630300c09219c8e.svg" alt="">
+            </div>
+        </div>
+        <div id="right">
+            <div id="search">
+                <input type="text" id="input" oninput="debouncing(main,100)" placeholder="Search" onclick="debouncing(main,100)">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class = "list" id = "list">
+     
+            </div>
+            <div>
+                <img src="https://www.hotstar.com/assets/c724e71754181298e3f835e46ade0517.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="slidshow">
+        <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/5318/1095318-h-a89162a0c1a9" alt="">
+    </div>
+    <div id = "container">
+        <div class = "result-container">
+            <div class = "result" id = "result">
+     
+            </div>
+        </div>
+    </div>
+    <div id="showpop">
+        <h2 class="pop" onclick="showpopular()">Latest & Trending</h2>
+        <div id="popular">
+         
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<script src="hotstar.js"></script>

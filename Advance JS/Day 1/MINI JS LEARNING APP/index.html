@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+        /* margin: auto; */
+        padding: 50px;
+      }
+      #buttons{
+        display: grid;
+        gap:100px;
+      }
+      #buttons>button{
+        width: 15%;
+        height: 50px;
+        margin-bottom: -60%;
+        font-size: 34px;
+        font-weight: 700;
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        border: 1px solid blue;
+        cursor: pointer;
+      }
+   
+      p{
+        font-size: 18px;
+        line-height: 24px;
+      }
+      p:first-of-type{
+        margin-top: -1%;
+      }
+      .video{
+        width: 500px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="buttons">
+      <!--Create buttons namely “Scope”, “Hoisting”, ‘Constructor Functions’, ‘Prototype’ in index.html. Each button will have it's respective name as HTML id. For e.g Scope button will HTML id as "scope". ( Note: no capital letter in id )-->
+      <button id="scope">Scope</button>
+      <div id="scopeinfo" >
+
+      </div> 
+
+      <button id="hoisting">Hoisting</button>
+      <div id="hoistinginfo">
+
+      </div> 
+
+      <button id="constructorFunctions" onclick="showconstruct()">Constructor Functions</button>
+      <div id="constructorinfo">
+
+      </div> 
+      
+    </div>
+  </body>
+</html>
+<script src="index.js"></script>

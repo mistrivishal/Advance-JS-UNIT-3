@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Movie Search</title>
+    <script src="https://kit.fontawesome.com/11e71d58fc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="movies.css">
+</head>
+<body>
+    <div id="nav">
+        <div class = "logo-container">
+            <a href="index.html"><img src="logo.png" alt=""></a>
+            <a href="index.html"><p>Masai_Movie<span>.Search</span></p></a>
+        </div>
+        </div>
+    <div class = "main-container">
+        <div class = "search-div">
+            <div class = "search">
+                <div class = "search-bar">
+                    <h3>Search Movie Here:</h3>
+                    <input type = "text" class = "movie-list" id = "movie-search" placeholder="Search Movie Title Here" onkeyup="findMovies()" onclick="findMovies()">
+                </div>
+                <div class = "list" id = "list">
+                    <!-- Movies search list below search bar here -->
+                </div>
+                <div id="sort">
+
+                </div>
+            </div>
+        </div>
+        <div id="movies">
+            <!-- Movies in grid format here -->
+        </div>
+        <div class = "container">
+            <div class = "result-container">
+                <div class = "result" id = "result">
+                    <!-- movie information here -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+<script src="movies.js"></script>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: flex;
+            border: solid 1px;
+        }
+        #input, #output{
+            flex: 1;
+            margin: 5%;
+            height: 400px;
+            border: solid red;
+        }
+        #input-text{
+            width: 99%;
+            height: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="input">
+            <select name="input-lang" id="input-lang">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+            </select>
+            <button onclick="Translate()"> Translate </button>
+            <textarea name="input-text" id="input-text"></textarea>
+        </div>
+        <div id="output">
+            <select name="output-lang" id="output-lang">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+            </select>
+            <p id="output1"></p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function read(id){
+        return document.getElementById(id)
+    }
+
+    async function Translate(){
+        //1. text translation
+        try{
+            const input = read('input-text').value
+            
+            const input_lang = read("input-lang").value
+            const output_lang = read("output-lang").value
+        // console.log('input:',input)
+
+        const res = await fetch("https://libretranslate.de/translate",{
+            method:'POST',
+            body:JSON.stringify({
+                q:input,
+                source:input_lang,
+                target: output_lang,
+                format: "text"
+            }),
+            //additional info about our request  that server might need to know
+            headers:{
+                "Content-Type":'application/json'
+            }
+        })
+        const {translatedText} = await res.json()
+        append(translatedText)
+        // let output = read('output')
+        console.log(translatedText)
+        }
+        catch(err){
+            console.log(err)
+        }
+
+        
+    }
+
+    let output = read('output1')
+
+    function append(x){
+        if(x === undefined){
+            output.innerHTML = null 
+        }
+        output.innerHTML = x
+    }
+</script>

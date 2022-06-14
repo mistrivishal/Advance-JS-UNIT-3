@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <form action="" onsubmit="reg(event)">
+        <input type="text" name="name" id="name" placeholder="Enter name">
+        <input type="email" name="email" id="email" placeholder="Enter email">
+        <input type="text" name="username" id="username" placeholder="Enter username">
+        <input type="password" name="password" id="password" placeholder="Create password">
+        <input type="number" name="number" id="number" placeholder="Enter Mobile number">
+        <input type="text" name="description" id="description" placeholder="discription"> 
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+<script type="module">
+    import navbar from "./Components/navbar.js";
+    document.getElementById("navbar").innerHTML = navbar();
+</script>
+<script src="./Scripts/signup.js"></script>

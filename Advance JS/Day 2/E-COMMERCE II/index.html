@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-COMMERCE I</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/11e71d58fc.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            text-align: center;
+        }
+        h1{
+            margin: auto;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            width: 30%;
+            background-color: rgb(216, 250, 250);
+            line-height: 60px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        #form{
+            display: grid;
+            gap:20px;
+            width: 28%;
+            margin: auto;
+            padding: 20px 20px;
+            border: 1px solid rgb(195, 189, 189);
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+        input,select{
+            padding: 8px;
+            font-size: 18px;
+            border: 0.5px solid rgb(205, 205, 205);
+            border-radius: 8px;
+            /* background-color: goldenrod; */
+        }
+        input:last-child{
+            font-size: 20px;
+            font-weight: 700;
+            background-color: rgb(240, 215, 73);
+            border:none;
+
+        }
+        ::placeholder { 
+            color: rgb(166, 166, 166);
+            opacity: 0.9;
+            font-weight: 4  00;
+        }
+        a{
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 30px;
+            /* border-bottom: 0.5px solid; */
+            margin-left: 20px;
+            font-weight: 400;
+        }
+        i{  
+            margin-top: 30px;
+            font-size: 18px;
+            color: #551a8b;
+            border-bottom: 0.5px solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Product Details Below</h1>
+    <form id="form" action="" onsubmit="storeproducts(event)">
+        <input placeholder="Enter Product Name" id="name" type="text" />
+        <input placeholder="Enter Product Category" id="category" type="text" />
+        <input placeholder="Enter Product Image UrL" id="img" type="text" />
+        <input placeholder="Enter Product Price" id="price" type="text" />
+        <select id="gender">
+            <option value="Select">Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <select id="sold">
+            <option value="false">Sell</option>
+            <option value="true">Sold</option>
+        </select>
+        <!-- <input placeholder="Enter Product Status" id="sold" type="text" /> -->
+        <input id="add" type="submit" name="submit" value="Submit" />
+    </form>
+    <i class="fa-solid fa-hand-point-right"><a href="product.html">To Find Your Products Click Here...</a></i>
+</body>
+</html>
+<script src="admin.js"></script>

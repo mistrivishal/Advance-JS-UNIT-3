@@ -1,0 +1,115 @@
+*{
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+#navbar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 60px;
+    display: flex;
+    gap:60px;
+    justify-content: right;
+    align-items: center;
+    padding: 0px 50px;
+    box-sizing: border-box;
+    background: white;
+    border: 0.5px solid rgb(206, 206, 206);
+    /* border-radius: 10px; */
+}
+#navbar a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+#navbar a:hover{
+    color: rgb(223, 160, 84);
+}
+#slideshow{
+    width: 100%;
+    height:600px;
+    margin: auto;
+    margin-top: 100px;
+    /* border: 1px solid red; */
+    text-align: center;
+    box-sizing: border-box;
+}
+#slideshow img{
+    width: 95%;
+    height: 600px;
+    border-radius: 10px;
+}
+#movies{
+    width: 95%;
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+    justify-items:center;
+    align-content: space-around;
+    box-sizing: border-box;
+    border: 0.5px solid rgb(206, 206, 206);
+    border-top: none;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    margin-top: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#movies div{
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    width: 70%;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+#movies img{
+    width: 90%;
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+#movies h2{
+    margin-bottom: -5px;
+}
+#movies p{
+    margin-bottom: -5px;
+}
+#sort-buttons{
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid rgb(206, 206, 206);
+    /* border-bottom: none; */
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    padding: 20px; 
+    box-sizing: border-box; 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+#sort-buttons button{
+    padding: 8px 32px;
+    border: 0.5px solid rgb(192, 192, 192);
+    background-color:white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 6px;
+    font-size: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+#sort-buttons button:hover{
+    box-shadow: none;
+}
+#sort-buttons p{
+    /* border: 1px solid; */
+    font-weight: 300;
+}

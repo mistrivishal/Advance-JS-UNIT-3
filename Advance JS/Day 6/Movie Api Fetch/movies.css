@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #171717;
+}
+
+
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.main-container{
+    min-height: 100%;
+    background-color: #171717;
+}
+.logo-container{
+    max-width: 100%;
+    /* margin: 0 100px; */
+    padding: 0 16px;
+    border-bottom: 1px solid #292929;
+    text-align: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-container img{
+    width: 200px;
+    height: 100%;
+}
+.logo-container p{
+    font-size: 32px;
+    color: #fff;
+    font-weight: bold;
+}
+.logo-container p span{
+    color: #d4aa11;
+}
+.search-div{
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+    /* border: 1px solid blue; */
+}
+.search h3{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #d4aa11;
+}
+.search-bar{
+    display: flex;
+    /* border: 1px solid white; */
+    padding: auto;
+    align-items: center;
+    justify-content: flex-start;
+}
+#movie-search{
+    padding: 10px 12px;
+    height: 18px;
+    font-size: 14px;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    outline: none;
+    color: #292929;
+    width: 250px;
+    margin-left: 15px;
+    position: relative;
+}
+.list{
+    position: absolute;
+    /* margin-top: 25px;; */
+    left: 14.2%;
+    top: 28.5%;
+    max-height: 300px;
+    width: 283px;
+    overflow-y: scroll;
+    z-index: 10;
+}
+.list .list-item{
+    background-color: #292929;
+    padding: 8px;
+    border-bottom: 1px solid #171717;
+    width: calc(96% - 8px);
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: background-color 200ms ease;
+    -o-transition: background-color 200ms ease;
+    transition: background-color 200ms ease;
+}
+.list .list-item:Hover{
+    background-color: #1f1f1f;
+}
+.list-item{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+.search-item-thumbnail img{
+    width: 40px;
+    margin-right: 16px;
+}
+.search-item-info h3{
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+}
+.search-item-info p{
+    font-size: 10px;
+    margin-top: -18px;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+/* thumbnail */
+.list::-webkit-scrollbar{
+    width: 6px;
+}
+.list::-webkit-scrollbar-thumb{
+    background-color: #d4aa11;
+    outline: none;
+    border-radius: 10px;
+}
+
+/* js related class */
+.hide-list{
+    display: none;
+}
+
+/* movie result */
+.result-container{
+    padding: 48px 0;
+}
+.result{
+    /* border: 1px solid white; */
+    padding: 20px 20px;
+    width: 80%;
+    margin: auto;
+    box-sizing: border-box;
+    margin-top: -5%;
+}
+.details{
+    width: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+    margin-top: 20px;
+    padding: 30px;
+    /* border: 1px solid white; */
+    box-sizing: border-box;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+}
+.movie-poster img{
+    max-width: 350px;
+    margin: 0 auto;
+    border: 4px solid white;
+}
+.movie-info{
+    text-align: center;
+    color: #fff;
+    padding-top: 3rem;
+}
+
+.title{
+    width: 100%;
+    margin: auto;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid white; */
+    padding: 10px 30px;
+    box-sizing: border-box;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+}
+.recom{
+    display: block;
+    color: #d4aa11  ;
+    font-size: 14px;
+}
+.name{
+    width: 40%;
+    color: white;
+
+}
+.rate{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    /* font-size: 20px; */
+    line-height: 8px;
+    color: white;
+}
+.movie-title{
+
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.year{
+    color: #b9b9b9;
+}
+.rate .imdbRating,.yourRate{
+    padding: 6.5px;
+    margin: 0 6.5px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.imdbRating P:first-child,.yourRate p:first-child{
+    color: grey;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+.imdbRating P span{
+    font-size: 20px;
+    margin-left: -5px;
+}
+.imdbRating P:last-child{
+    font-size: 13px;
+    /* text-align: center; */
+    margin-left: 25px;
+    margin-top: -5px;
+    font-weight: 400;
+}
+.yourRate P:last-child{
+    font-size: 22px;
+    color: #528edd;
+}
+.yourRate P span{
+    font-size: 32px;
+    margin-left: -5px;
+}
+.movie-info{
+    text-align: left;
+    width: 70%;
+    display: grid;
+    align-items: flex-start;
+    gap: 0px;
+    /* border: 1px solid white; */
+}
+.movie-info p{
+    font-size: 14px;
+    margin: 12px;
+}
+.movie-info b{
+    font-size: 18px;
+    margin-right: 10px;
+    /* color: rgb(2, 2, 165); */
+}
+.movie-info .released{
+    font-size: 16px;
+    /* opacity: 0.9; */
+}
+
+.movie-info .genre{
+    display: inline-block;
+    border-radius: 3px;
+    margin-top: -20px;
+    box-sizing: border-box;
+}
+.movie-info .genre span{
+    padding: 4px 20px;
+    font-weight: 500;
+    border: 1px solid rgba(168, 168, 168, 0.618);
+    background-color: #59a1ff24;
+    word-spacing: 10px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+.movie-info .plot{
+    max-width: 600px;
+    text-align: justify;
+    line-height: 20px;
+}
+.movie-info .language{
+    color: #d4aa11;
+    font-style: italic;
+}
+.movie-info .language b{
+    color: white;
+    font-style: normal;
+}
+.movie-info .awards{
+    font-weight: 300;
+    font-size: 14.5px;
+}
+.movie-info .awards i{
+    color: #d4aa11;
+    margin: 16px 11px 0 0;
+}
+.movie-info .actors span{
+    word-spacing: 5px;
+}
+#sort{
+    width: 25%;
+    display: flex;
+    /* border: 1px solid white; */
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+#sort button{
+    height: 30px;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+#movies{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: auto;
+    gap:40px;
+    color: white;
+    margin-top: 50px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#movies img{
+    width: 100%;
+    height: 70%;
+    border-radius: 10px;
+}
+#movies h2{
+    font-size: 18px;
+    padding-left: 10px;
+}
+#movies p{
+    font-size: 12px;
+}

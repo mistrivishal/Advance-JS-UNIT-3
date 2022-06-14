@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // ES6 Class is basically constructor function
+
+    // 1.Inheritance
+
+    // class Car{
+    //     constructor(n,b){
+    //         this.name = n;
+    //         this.wheels = 4;
+    //         this.brand = b;
+    //     }
+    // }
+
+    // let c1 = new Car('Swift','Maruti');
+    // console.log('c1:', c1)
+
+    // class Sedan extends Car{
+    //     constructor(n,b,value){
+    //         super(n,b);
+    //         this.sunroof = true;
+    //     }
+    // }
+
+    // let s1 = new Sedan('Ciaz','Maruti');
+    // console.log('s1:', s1)
+
+
+    // class ElectricSedan extends Sedan{
+    //     constructor(n,b,value){
+    //         super(n,b);
+    //         this.electric = value;
+    //     }
+    // }
+
+
+    // let es1 = new ElectricSedan('Verna','Hyundai',true);
+    // console.log('es1:', es1)
+
+
+    // 2. Encapsulation
+
+    // class Employee{
+    //     constructor(n,r){
+    //         // this.name = n;
+    //         // this.rating = r;
+    //         let name;
+    //         let rating;
+    //     }
+    //     getName(){
+    //         return this.name;
+    //     }
+    //     setName(val){
+    //         this.name = val;
+    //     }
+    //     getRating(){
+    //         return this.rating;
+    //     }
+    //     setRating(s){
+    //         this.rating = s;
+    //     }
+    // }
+
+    // let e1 = new Employee();
+
+    // e1.setName('Pablo');
+
+    // console.log(e1.getName());
+
+    // e1.setRating(10);
+
+    // console.log(e1.getRating());
+
+
+    // 3. Abstraction
+    
+    class Employee{
+        constructor(n,r){
+            this.name = n;
+            this.rating = r;
+            this.skills = [];
+        }
+        learnSkills(skill){
+            this.skills.push(skill);
+        }
+    }
+
+    let e1 = new Employee('Pablo',10);
+
+    e1.learnSkills('oops');
+
+    console.log('e1:',e1)
+
+</script>

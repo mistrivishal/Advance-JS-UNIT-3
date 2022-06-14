@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS CONCEPTS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .animate-charcter
+        {   
+            text-transform: uppercase;
+            background-image: linear-gradient(
+            -225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%
+        );
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            display: inline-block;
+            font-size: 40px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+        }
+
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3 class="animate-charcter">OOPS-1 CONCEPTS ASSIGNMENT</h3>
+          </div>
+        </div>
+    </div>
+    <div id="Inheritance">
+        <div id="myFamily"></div>
+        <div id="catFamily"></div>
+    </div>
+</body>
+</html>
+<script>
+
+function help(x){
+    return document.getElementById(x)
+}
+
+console.log(`!.. Inheritance ..!`)
+
+
+console.log(`Family Tree`)
+
+class first_gen{
+    constructor(name,Gfather,Gmother){
+        this.name = name;
+        this.Gfather = Gfather;
+        this.Gmother = Gmother;
+    }
+    firstgen(){
+        return this.name + "\n" + '⇨' + "\n" + '1. Grandparents:-' + "\n" + '•  ' +  this.Gfather + " " + this.Gmother;
+    }
+
+}
+
+class second_gen extends first_gen{
+    constructor(name,Gfather,Gmother,father,mother){
+        super(name,Gfather,Gmother)
+        this.father = father;
+        this.mother = mother;
+    }
+    secondgen(){
+        return this.firstgen() + "\n" + '⇨' + "\n" + '2. Parents:-' + "\n" + '•  ' + this.father + " " + this.mother;
+    }
+}
+
+class third_gen extends second_gen{
+    constructor(name,Gfather,Gmother,father,mother,s1,s2,s3){
+        super(name,Gfather,Gmother,father,mother)
+        this.sibling1 = s1;
+        this.sibling2 = s2;
+        this.sibling3 = s3;
+    }
+    family(){
+        return this.secondgen() + "\n" + '⇨' + "\n" + '3. Siblings:-' + "\n" + '•  ' + this.sibling1 + " " + this.sibling2 + " " + this.sibling3;
+    }
+}
+
+let Family = new third_gen('Mistri','Dagaji','Vithabai','Dattatreya','Varsha','Deepali','Prashant','Vishal')
+console.log(Family)
+console.log(Family.family())
+
+console.log('\n')
+
+console.log(`Cat Family`)
+
+class Cat{
+    constructor(){
+        this.evo = 'Proailurus Lemanensis'  
+        this.speed1 = '48km/h'
+        this.claws = 4;
+        this.tail = true;
+        this.Whiskers = true;
+    }
+}
+
+class Lion extends Cat{
+    constructor(s2){
+        super()
+        this.speed2 = s2;
+    }
+}
+
+class Tiger extends Lion{
+    constructor(s2,s3){
+        super(s2)
+        this.speed3 = s3;
+    }
+    evo1(){
+        return "Lion and Tiger are evolved from " + this.evo + " i.e. basically 'First Cat' , having speed " + this.speed2 + " " + this.speed3 + " repectively"
+    }
+}
+let cat = new Tiger("80km/h","60km/h")
+console.log(cat)
+console.log(cat.evo1())
+
+console.log('\n')
+
+console.log(`!.. Encpasulation ..!`)
+
+class userPaymentDetails{
+    constructor(){
+        let name;
+        let card_Number;
+    }
+    setName(name){
+        this.name = name;
+    }
+    getName(){
+        return this.name;
+    }
+    setCard_details(no){
+        this.card_Number = no;
+    }
+    getCard_details(){
+       return this.card_Number;
+    }
+}
+let details = new userPaymentDetails()
+
+console.log(details)
+
+details.setName("Vishal")
+console.log(details.getName())
+
+details.setCard_details("111111111111")
+console.log(details.getCard_details())
+
+console.log('\n')
+
+console.log(`!.. Abstraction ..!`)
+
+class team{
+    constructor(n){
+        this.name = n
+        this.result = [null];
+    }
+    match(...Re){
+        this.result = Re
+        this.matches = this.result.length;
+    }
+
+}
+let team1 = new team('Mumbai Indians')
+console.log(team1)
+team1.match('L','L','L','L','L','L','L','L','W')
+
+console.log('\n')
+
+console.log(`!.. Polymorphism ..!`)
+
+
+class Simbha{
+    constructor(){
+        this.name1 = 'Simbha'
+    }
+    chase(){
+        console.log(`${this.name1} is running`)
+    }
+}
+class Nala extends Simbha{
+    constructor(){
+        super()
+        this.name2 = 'Nala'
+    }
+    chase(){
+        console.log(`${this.name2} is chasing ${this.name1}`)
+    }
+}
+class Pumba extends Nala{
+    constructor(){
+        super()
+        this.name3 = 'Pumba'
+    }
+    chase(){
+        console.log(`${this.name3} is chasing ${this.name2}`)
+    }
+}
+
+class Timon extends Pumba{
+    constructor(){
+        super()
+        this.name4 = 'Timon'
+    }
+    chase(){
+        console.log(`${this.name4} is chasing ${this.name3}`)
+    }
+}
+
+let s = new Simbha()
+let n = new Nala()
+let p = new Pumba()
+let t = new Timon()
+
+
+s.chase()
+n.chase()
+p.chase()
+t.chase()
+
+</script>

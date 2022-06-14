@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/styles/signup.css">
+        <link rel="stylesheet" href="/styles/index.css">
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="login.html">Login</a></div>
+            <div><a href="signup.html">Signup</a></div>
+        </div>
+        
+        <div id="signup-form-div">
+            <h1>Signup</h1>
+            <form onsubmit="signup(event)">
+                <!--Write form input elements here-->
+                <input id="name" type="name" placeholder="Enter your name" required/>
+                <input id="number" type="tel" placeholder="999 999 9999" minlength="10" maxlength="12" required/>
+                <input id="email" type="email" placeholder="Enter your email" required/>
+                <input id="pass" type="password" placeholder="Enter your password" minlength="8" maxlength="16" required/>
+                <input id="submit" type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+
+</html>
+<script>
+    function signupdata (n,nu,e,p){
+        this.name = n;
+        this.number = nu;
+        this.email = e;
+        this.password = p;
+    }
+    function signup(event){
+        event.preventDefault();
+        
+        let form = document.querySelector("form")
+        
+        let name = form.name.value;
+        let number = form.number.value;
+        let email = form.email.value;
+        let password = form.pass.value;
+
+        let credential = new  signupdata(name,number,email,password)
+
+        let signupcred = JSON.parse(localStorage.getItem("credentials")) || []
+
+        signupcred.push(credential)
+
+        localStorage.setItem("credentials",JSON.stringify(signupcred))
+
+        alert(`${name} you have signed up successfully`)
+
+        window.location.href = "login.html";
+
+        // form.name.value = null;
+        // form.number.value = null;
+        // form.email.value = null;
+        // form.pass.value = null;
+
+    }
+    
+</script>

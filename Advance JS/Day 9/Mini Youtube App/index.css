@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+body{
+    background: #181818;
+}
+#navbar{
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
+    background-color: #202020;
+    height: 60px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 4px 5px -6px rgb(181, 181, 181);
+}
+#navbar div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+}
+#left{  
+    width: 10%;
+    gap: 0px;
+    /* border: 1px solid; */
+}
+#left img:last-child{
+    margin-left: -20px;
+}
+#middle{
+    width: 44%;
+    /* border: 1px solid; */
+    padding: 0px 20px;
+}
+#middle input{
+    width: 90%;
+    height: 50%;
+    background: #121212;
+    border: none;
+    outline: none;
+    padding: 5px 8px;
+    font-size: 16px;
+}
+#navbar img{
+    width: 26px;
+}
+#right{
+    width: 15%;
+    justify-content: space-between;
+}
